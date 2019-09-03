@@ -1,0 +1,135 @@
+
+:root {
+    --main-text-color: #2E3B44; 
+    --main-text-color-hover: #0F8B8D; 
+
+    --myred: #D33E43; 
+    --myblue: #29335C; 
+    --mygreen: #0F8B8D;
+    --mycream: #EAEAEA;
+    --mysnow: #F9F9F9;
+
+  }  
+
+body {
+    color: var(--main-text-color);
+    background-color: var(--mysnow) !important;
+    padding: 0;
+    margin: 0;
+}
+
+h1,h2 {
+    font-family: 'Alegreya', serif;
+}
+
+h3,h4,p,a {
+    font-family: 'Lato', sans-serif;
+}
+
+  /*--- Head ---*/
+
+#name-title a{
+    color: var(--myblue);
+    font-family: 'Alegreya', serif;
+    text-decoration: none;
+}
+
+
+    /*--- navigation bar ---*/
+.nav-link{
+    color: var(--main-text-color);
+    cursor: pointer;
+}
+.nav-link {
+    margin-right: 1em !important;
+}
+.nav-link:hover {
+    color: var(--main-text-color-hover);
+}
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+  /*--- Home Content ---*/
+
+#home-content {
+}
+
+.description {
+    left: 50%;
+    top: 45%;
+    text-align: center;
+}
+.description {
+    color: var(--main-text-color);
+}
+.description p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+
+  /*--- Lines --*/
+
+
+.line-side {
+    border-top: 2px solid var(--myblue);
+    width: 5px;
+}
+
+.left{
+    margin-right: 5px;
+}
+
+.right {
+    margin-left: 5px;
+}
+
+.outer{
+    border-top: 2px solid var(--myred);
+    width: 3px;
+}
+
+.left.outer{
+    margin-left: auto;
+}
+
+.right.outer {
+    margin-right: auto;
+}
+
+    /*--- Top line --*/
+
+    #top-line {
+        width: 200px;
+    }
+
+    /*--- Footer --*/
+
+.line-center {
+    border-top: 2px solid var(--mygreen);
+    width: auto;
+}
+
+    /*--- Mailto copy to clipboard --*/
+
+.mailto-wrapper {
+	position: relative;
+}
+.mailto-message {
+    font-family: 'Lato', sans-serif;
+	top: 0;
+	left: 50%;
+    transform: translate(-50%, 130%);
+	position: absolute;
+	display: none;
+	width: auto;
+	white-space: nowrap;
+	font-size: 11px;
+	color: #2E3B44;
+    padding: 2px 6px;
+	
+}
+.mailto-wrapper:hover .mailto-message {
+	display: block;
+}
