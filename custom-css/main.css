@@ -18,9 +18,13 @@ body {
     margin: 0;
 }
 
+
 h1,h2 {
     font-family: 'Alegreya', serif;
 }
+
+/* deleted this line from bootstrap min @media (min-width:1200px){.container{max-width:1200px}} */
+
 
 h3,h4,p,a {
     font-family: 'Lato', sans-serif;
@@ -52,20 +56,26 @@ h3,h4,p,a {
 
   /*--- Home Content ---*/
 
-#home-content {
+.lcol {
+    color: var(--main-text-color);
+    /* margin-left: 3%; */
+    /* margin-right: 3%; */
 }
 
-.description {
-    left: 50%;
-    top: 45%;
-    text-align: center;
-}
-.description {
-    color: var(--main-text-color);
-}
-.description p {
-    font-size: 1.3rem;
+.lcol p {
+    font-size: 1.1rem;
     line-height: 1.5;
+    text-align: justify;
+}
+
+
+#headshot {
+    height: 200px;
+    border-radius: 50%;
+}
+
+#home-content {
+    margin-top: 30px;
 }
 
 
@@ -73,7 +83,7 @@ h3,h4,p,a {
 
 
 .line-side {
-    border-top: 2px solid var(--myblue);
+    border-top: 1px solid var(--myblue);
     width: 5px;
 }
 
@@ -86,7 +96,7 @@ h3,h4,p,a {
 }
 
 .outer{
-    border-top: 2px solid var(--myred);
+    border-top: 1px solid var(--myred);
     width: 3px;
 }
 
@@ -101,14 +111,14 @@ h3,h4,p,a {
     /*--- Top line --*/
 
     #top-line {
-        width: 200px;
+        width: 100%;
     }
 
     /*--- Footer --*/
 
 .line-center {
-    border-top: 2px solid var(--mygreen);
-    width: auto;
+    border-top: 1px solid var(--mygreen);
+    width: 100%;
 }
 
     /*--- Mailto copy to clipboard --*/

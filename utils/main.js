@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 	var mailto = $('.mailto-link');
 	var mailtoWrapper = $('.mailto-wrapper');
-	var messageCopy = 'Copy email address to clipboard';
+	var messageCopy = 'Copy email address';
 	var messageSuccess = 'Copied!';
 	
 	mailtoWrapper.append('<span class="mailto-message"></span>');
