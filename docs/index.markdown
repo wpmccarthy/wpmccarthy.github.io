@@ -13,27 +13,4 @@ I study how people construct visual worlds, both internally and externally, in o
 
 ### bio
 
-I grew up in Somerset, England. I studied Computer Science and Philosophy at Oxford, and then moved to the US to start a PhD in Cognitive Science.
-
-<!-- 
-I flirted with the idea of art school, but decided that ideas needed to go into my brain before anything meaningful would come out. I studied computer science and philosophy at Oxford, and discovered that minds exist (sort of). I thought that studying them would be cool, so moved to the US to start a PhD in cognitive science. -->
-
-<!-- 
-```python
-
-will = Human(male,)
-
-will.location = Somerset
-for age in range(4,19):
-    will.learn()
-
-will.location = Oxford
-for age in range(19,22):
-    will.learn(cs)
-    will.learn(philosophy)
-
-will.location = San Diego
-for age in range(23,):
-    will.be_a_young_researcher()
-
-``` -->
+I grew up in Somerset, England. I studied Computer Science and Philosophy at Oxford, and then moved to San Diego for a PhD in Cognitive Science.
