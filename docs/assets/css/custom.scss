@@ -3,6 +3,8 @@
 
 @charset "utf-8";
 
+@import "minima";
+
 // // 1. Configuration and helpers
 // @import '1-helpers/mixins';
 // @import '1-helpers/variables';
@@ -14,63 +16,51 @@
 
 //@import "minima/base";
 
-$text-color:       #333 !default;
 
-
-:root {
-    --main-text-color: #2E3B44; 
-    --main-text-color-hover: #0F8B8D; 
-
-    --myred: #D33E43; 
-    --myblue: #29335C; 
-    --mygreen: #0F8B8D;
-    --mycream: #EAEAEA;
-    --mysnow: #F9F9F9;
-
-  }  
-
-body {
-    color: $text-color;
-    background-color: var(--mysnow) !important;
-    padding: 0;
-    margin: 0;
+h1, h2, h3, h4, h5, h6 {
+    font-family: $secondary-font-family;
 }
 
-
-h1,h2 {
-    font-family: 'Alegreya', serif;
+a:visited{
+    color: $brand-color;
 }
 
-/* deleted this line from bootstrap min @media (min-width:1200px){.container{max-width:1200px}} */
-
-
-h3,h4,p,a {
-    font-family: 'Lato', sans-serif;
+.site-title{
+    font-family: $secondary-font-family;
+    color: $brand-color !important;
 }
 
-  /*--- Head ---*/
+.site-header{
+    border-top: none;
+    border-bottom: none;
+}
 
-#name-title a{
-    color: var(--myblue);
-    font-family: 'Alegreya', serif;
+.navbar a:hover {
+    color: $brand-color;
     text-decoration: none;
 }
 
+a.page-link{
+    background-color: transparent;
+    border: none;
+    color: $text-color;
+    font-weight: bolder;
+    transform: skewX(0.2rad);
+}
 
-    /*--- navigation bar ---*/
-.nav-link{
-    color: var(--main-text-color);
-    cursor: pointer;
+.page-link:hover{
+    background-color: transparent;
+    color: $brand-color;
+    transform: skewX(0rad);
 }
-.nav-link {
-    margin-right: 1em !important;
+
+.page-link:active{
+    background-color: transparent;
+    transform: skewX(0rad);
 }
-.nav-link:hover {
-    color: var(--main-text-color-hover);
-}
-.navbar-collapse {
-    justify-content: flex-end;
-}
+
+
+
 
   /*--- Home Content ---*/
 
@@ -87,10 +77,10 @@ h3,h4,p,a {
 }
 
 
-#headshot {
-    height: 200px;
+#headshot{
     border-radius: 50%;
-}
+ }
+
 
 #home-content {
     margin-top: 30px;
@@ -134,10 +124,21 @@ h3,h4,p,a {
 
     /*--- Footer --*/
 
-.line-center {
-    border-top: 1px solid var(--mygreen);
-    width: 100%;
+.social img{
+    width: 25px;
+    align-content: center;
 }
+
+.social-button {
+    border: none;
+    background-color: transparent;
+}
+
+.footer-contact{
+    font-size: 80%;
+}
+
+
 
     /*--- Mailto copy to clipboard --*/
 
@@ -145,9 +146,9 @@ h3,h4,p,a {
 	position: relative;
 }
 .mailto-message {
-    font-family: 'Lato', sans-serif;
+    font-family: $base-font-family;
 	top: 0;
-	left: 50%;
+    left: 50%;
     transform: translate(-50%, 130%);
 	position: absolute;
 	display: none;
@@ -156,8 +157,10 @@ h3,h4,p,a {
 	font-size: 11px;
 	color: #2E3B44;
     padding: 2px 6px;
+    background-color: rgba(255,255,255,0.8);
 	
 }
 .mailto-wrapper:hover .mailto-message {
 	display: block;
 }
+

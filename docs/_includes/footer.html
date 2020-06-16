@@ -1,0 +1,42 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+    
+    <div class="container">
+      <p class="footer-contact">
+        <strong>{{ site.title | escape }}</strong><br/>
+        Cognitive Science Department <br/> 
+        University of California San Diego
+      </p>
+      
+      <div class="row align-items-center">
+        <div class="col social my-auto">
+          <div class="container text-center">
+            <button type="button" class="btn social-button"><a href="mailto:{{ site.email }}"><img src="{{ "assets/img/social/email.svg" | relative_url }}"/></a></button>
+            <button type="button" class="btn social-button"><a href="https://www.linkedin.com/in/william-mccarthy-95909798/"><img src="{{ "assets/img/social/linkedin.svg" | relative_url }}"/></a></button>
+            <button type="button" class="btn social-button"><a href="https://github.com/wpmccarthy/"><img src="{{ "assets/img/social/github.svg" | relative_url }}"/></a></button>
+            <button type="button" class="btn social-button"><a href="https://twitter.com/wp_mccarthy/"><img src="{{ "assets/img/social/twitter.svg" | relative_url }}"/></a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+<!-- 
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+           <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+            </li> 
+        </ul>
+      </div>
+    </div> -->
+
+  </div>
+
+</footer>
