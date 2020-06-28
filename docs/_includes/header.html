@@ -14,6 +14,7 @@
 
         <div class="collapse navbar-collapse">
           <div class="navbar-nav ml-auto">
+            <a class="page-link" href="{{ "assets/mccarthy_cv_06_28_20.pdf" | relative_url }}">cv</a>
             {%- for path in page_paths -%}
               {%- assign my_page = site.pages | where: "path", path | first -%}
               {%- if my_page.title -%}

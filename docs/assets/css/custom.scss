@@ -16,7 +16,6 @@
 
 //@import "minima/base";
 
-
 h1, h2, h3, h4, h5, h6 {
     font-family: $secondary-font-family;
 }
@@ -79,6 +78,7 @@ a.page-link{
 
 #headshot{
     border-radius: 50%;
+    max-width: 90%;
  }
 
 

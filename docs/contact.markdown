@@ -6,4 +6,4 @@ permalink: /contact/
 
 I'd love to hear from you. 
 
-I most frequently check my [email](mailto:wmccarthy@ucsd.edu), but you can also try the links at the bottom of the website. 
+[Email](mailto:wmccarthy@ucsd.edu) is best, or try one of the links in at the bottom of the page.
