@@ -51,3 +51,7 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+sass:
+    sass_dir: ./_sass
