@@ -11,7 +11,7 @@ title: home
 <div class="row pb-3 align-items-center">
 
 <div class="col-sm-4">
-<img src="assets/img/photos/wills_head.jpg" id="headshot">
+<img src="/assets/img/photos/wills_head.jpg" id="headshot">
 </div>
 
 <div class="col mt-auto mb-auto pl-0">
