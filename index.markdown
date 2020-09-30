@@ -32,4 +32,4 @@ Most recently, I explored [how our ability to build something changes with pract
 
 I grew up in Somerset, a grassy county in the southwest of England.
 I was tempted by a career in art, but eventually left the shire to study Computer Science and Philosophy at Oxford.
-As a serial generalist, I became attracted to the field(s) of Cognitive Science, in particular the eclectic department at UCSD, where I am now in the 2nd year of my PhD.
+As a serial generalist, I became attracted to the field(s) of Cognitive Science, in particular the eclectic department at UCSD, where I am now in the 3rd year of my PhD.
