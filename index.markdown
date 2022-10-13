@@ -15,7 +15,14 @@ title: home
 </div>
 
 <div class="col mt-auto mb-auto pl-0">
-I’m a PhD student in cognitive science. I study how people represent and manipulate the world around them, and in particular how we draw on different kinds of experience to structure our interactions with objects. To do this I run large-scale, online experiments where people build things, which intersects with my other interest in using technology to enable people to make things.
+Hi! I'm a PhD student in Cognitive Science, studying how different forms of interaction shape the way we represent the world.
+I'm most interested in how the act of constructing things shapes our
+
+To do this I run online experiments where people build things, and ask how 
+
+
+
+I've used physical construction as a case study to ask how different ways of interacting with objects changes the way we think about them. To do this I create online experiments where people can build block towers, which intersects with my other interest in using technology to enable people to make things.
 </div>
 </div>
 
