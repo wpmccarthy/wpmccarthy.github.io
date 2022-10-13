@@ -15,14 +15,9 @@ title: home
 </div>
 
 <div class="col mt-auto mb-auto pl-0">
-Hi! I'm a PhD student in Cognitive Science, studying how different forms of interaction shape the way we represent the world.
-I'm most interested in how the act of constructing things shapes our
+<p>I’m a PhD Student in Cognitive Science. I believe that the act of making things has a profound impact on how we view the world, and in my research I use the tools of cognitive science to see whether this is true.</p>
 
-To do this I run online experiments where people build things, and ask how 
-
-
-
-I've used physical construction as a case study to ask how different ways of interacting with objects changes the way we think about them. To do this I create online experiments where people can build block towers, which intersects with my other interest in using technology to enable people to make things.
+<p>To do this I run online experiments where people build things, and design computational models that let us test hypothesis about their mental representations. I hope that by understanding how people learn to make things, we can design technology that makes it easier for people to create.</p>
 </div>
 </div>
 
