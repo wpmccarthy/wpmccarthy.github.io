@@ -39,12 +39,13 @@ a:visited{
     text-decoration: none;
 }
 
-a.page-link{
+a.page-link {
+    position: relative;
     background-color: transparent;
     border: none;
-    color: $text-color;
+    color: transparent; /* Hide the direct text color */
     font-weight: bolder;
-    transform: skewX(0.2rad);
+    overflow: hidden; /* Clip the pseudo-element to the dimensions of the link */
 }
 
 .page-link:hover{

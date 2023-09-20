@@ -15,11 +15,14 @@ title: home
 </div>
 
 <div class="col mt-auto mb-auto pl-0">
-<p>I’m a PhD Student in Cognitive Science. I believe that the act of making things has a profound impact on how we view the world, and in my research I use the tools of cognitive science to understand the ways in which this is true (or false!).</p>
+<p>I’m Will, a final-year PhD student in Cognitive Science. I study the cognitive processes underlying our ability to build things, with the aim of developing technology to complement and extend this ability. </p>
+</div>
+</div>
 
-<p>To do this I run online experiments where people build things, and design computational models that let us test hypothesis about their mental representations. I hope that by understanding how people learn to make things, we can design technology that makes it easier for people to create.</p>
-</div>
-</div>
+<p> My experimental work explores a wide range of generative behaviors (e.g. block building, drawing, computer aided design, language) to demonstrate the strengths and limitations of human cognition as applied to creative domains. My computational work tests specific hypotheses about the format of mental representations that support such tasks, particularly when we collaborate with others. My hope is that by understanding how human cognition interfaces with the world, we can design AI systems that dovetail with our strengths and complement our weaknesses. </p>
+
+<!-- 
+<p>I use tools from computational cognitive psychology to explore how we might leverage the complementary strengths of human intelligence and AI. My experimental work has explored a range of generative behaviors (e.g. block building, drawing, computer aided design) to demonstrate the strengths and limitations of our ability to create. I also create computational models to test hypotheses about how we learn in these settings, and demonstrate that we build (and think) in different ways from AI algorithms.</p> -->
 
 <!-- ### research
 How do perception, action, and communication constrain each other to support abstract reasoning?
@@ -30,5 +33,5 @@ I'm inspired by theories of cognition that emphasize the continuity between our 
 ### bio
 
 I grew up in Somerset, a grassy county in the southwest of England.
-Despite being tempted by a career in art, I eventually left the shire to study Computer Science and Philosophy at Oxford.
-Inspired by approaches to cognition that emphasized our relation to the world, I decided to pursue Cognitive Science, and joined the eclectic department at UCSD, where I am now in the 5th year of my PhD.
+After seriously considering a career in art and design, I eventually left the shire to study Computer Science and Philosophy at Oxford.
+Inspired by approaches to cognition that emphasized our relation to the world, I decided to pursue Cognitive Science, and joined the eclectic department at UCSD, where I am now in the final year of my PhD.

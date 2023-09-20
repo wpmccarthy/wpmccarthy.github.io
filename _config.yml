@@ -55,3 +55,9 @@ plugins:
 
 sass:
     sass_dir: ./_sass
+
+
+header_pages:
+  # - index.markdown
+  - research.markdown
+  - contact.markdown
