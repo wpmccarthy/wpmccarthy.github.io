@@ -1,0 +1,118 @@
+{
+  "hover": {
+    "spread": 60,
+    "soft": 30,
+    "seconds": 3
+  },
+  "defaultPresets": [
+    "madder",
+    "violet",
+    "indigo",
+    "oldyeller",
+    "viridian",
+    "blurple"
+  ],
+  "presets": {
+    "madder": {
+      "corner": 40,
+      "mottleScale": 3,
+      "pigments": [
+        { "color": "#e6d6ae", "strength": 0.17, "spread": 74, "soft": 200, "ragged": 16, "wick": 23, "tide": 0.17, "mottle": 0.26, "drift": 0 },
+        { "color": "#e8a25a", "strength": 0.31, "spread": -12, "soft": 63, "ragged": 16, "wick": 6, "tide": 0.18, "mottle": 0.35, "drift": 8 },
+        { "color": "#c23b3f", "strength": 0.56, "spread": -8, "soft": 30, "ragged": 10, "wick": 3, "tide": 0.12, "mottle": 0.43, "drift": 8 },
+        { "color": "#6e1830", "strength": 0.18, "spread": -166, "soft": 162, "ragged": 12, "wick": 0, "tide": 0.17, "mottle": 0.38, "drift": 15 }
+      ]
+    },
+    "ochre": {
+      "corner": 40,
+      "mottleScale": 3,
+      "pigments": [
+        { "color": "#eadbb0", "strength": 0.17, "spread": 74, "soft": 200, "ragged": 16, "wick": 23, "tide": 0.17, "mottle": 0.26, "drift": 0 },
+        { "color": "#e9c46a", "strength": 0.31, "spread": -12, "soft": 63, "ragged": 16, "wick": 6, "tide": 0.18, "mottle": 0.35, "drift": 8 },
+        { "color": "#c98a3c", "strength": 0.56, "spread": -8, "soft": 30, "ragged": 10, "wick": 3, "tide": 0.12, "mottle": 0.43, "drift": 8 },
+        { "color": "#8a4a2a", "strength": 0.18, "spread": -166, "soft": 162, "ragged": 12, "wick": 0, "tide": 0.17, "mottle": 0.38, "drift": 15 }
+      ]
+    },
+    "viridian": {
+      "corner": 40,
+      "mottleScale": 3,
+      "pigments": [
+        { "color": "#e4dbb4", "strength": 0.17, "spread": 74, "soft": 200, "ragged": 16, "wick": 23, "tide": 0.17, "mottle": 0.26, "drift": 0 },
+        { "color": "#c9d27a", "strength": 0.31, "spread": -12, "soft": 63, "ragged": 16, "wick": 6, "tide": 0.18, "mottle": 0.35, "drift": 8 },
+        { "color": "#3f8a74", "strength": 0.56, "spread": -8, "soft": 30, "ragged": 10, "wick": 3, "tide": 0.12, "mottle": 0.43, "drift": 8 },
+        { "color": "#1f4a4a", "strength": 0.18, "spread": -166, "soft": 162, "ragged": 12, "wick": 0, "tide": 0.17, "mottle": 0.38, "drift": 15 }
+      ],
+      "ink": "rgba(252, 247, 238, 0.95)"
+    },
+    "violet": {
+      "corner": 40,
+      "mottleScale": 3,
+      "pigments": [
+        { "color": "#e6d8bc", "strength": 0.17, "spread": 74, "soft": 200, "ragged": 16, "wick": 23, "tide": 0.17, "mottle": 0.26, "drift": 0 },
+        { "color": "#e7a9b8", "strength": 0.31, "spread": -12, "soft": 63, "ragged": 16, "wick": 6, "tide": 0.18, "mottle": 0.35, "drift": 8 },
+        { "color": "#7a4b8f", "strength": 0.56, "spread": -8, "soft": 30, "ragged": 10, "wick": 3, "tide": 0.12, "mottle": 0.43, "drift": 8 },
+        { "color": "#3b2346", "strength": 0.18, "spread": -166, "soft": 162, "ragged": 12, "wick": 0, "tide": 0.17, "mottle": 0.38, "drift": 15 }
+      ]
+    },
+    "umber": {
+      "corner": 40,
+      "mottleScale": 3,
+      "pigments": [
+        { "color": "#e0d2ae", "strength": 0.17, "spread": 74, "soft": 200, "ragged": 16, "wick": 23, "tide": 0.17, "mottle": 0.26, "drift": 0 },
+        { "color": "#c8a77a", "strength": 0.31, "spread": -12, "soft": 63, "ragged": 16, "wick": 6, "tide": 0.18, "mottle": 0.35, "drift": 8 },
+        { "color": "#7d5a40", "strength": 0.56, "spread": -8, "soft": 30, "ragged": 10, "wick": 3, "tide": 0.12, "mottle": 0.43, "drift": 8 },
+        { "color": "#3a2a24", "strength": 0.18, "spread": -166, "soft": 162, "ragged": 12, "wick": 0, "tide": 0.17, "mottle": 0.38, "drift": 15 }
+      ]
+    },
+    "naples": {
+      "corner": 40,
+      "mottleScale": 3,
+      "pigments": [
+        { "color": "#ece2c0", "strength": 0.17, "spread": 74, "soft": 200, "ragged": 16, "wick": 23, "tide": 0.17, "mottle": 0.26, "drift": 0 },
+        { "color": "#f0d9a0", "strength": 0.31, "spread": -12, "soft": 63, "ragged": 16, "wick": 6, "tide": 0.18, "mottle": 0.35, "drift": 8 },
+        { "color": "#e7b98a", "strength": 0.56, "spread": -8, "soft": 30, "ragged": 10, "wick": 3, "tide": 0.12, "mottle": 0.43, "drift": 8 }
+      ]
+    },
+    "cadmium": {
+      "corner": 40,
+      "mottleScale": 3,
+      "pigments": [
+        { "color": "#ecdcae", "strength": 0.17, "spread": 74, "soft": 200, "ragged": 16, "wick": 23, "tide": 0.17, "mottle": 0.26, "drift": 0 },
+        { "color": "#f2c14e", "strength": 0.31, "spread": -12, "soft": 63, "ragged": 16, "wick": 6, "tide": 0.18, "mottle": 0.35, "drift": 8 },
+        { "color": "#e2572c", "strength": 0.56, "spread": -8, "soft": 30, "ragged": 10, "wick": 3, "tide": 0.12, "mottle": 0.43, "drift": 8 },
+        { "color": "#9b2a1e", "strength": 0.18, "spread": -166, "soft": 162, "ragged": 12, "wick": 0, "tide": 0.17, "mottle": 0.38, "drift": 15 }
+      ]
+    },
+    "blurple": {
+      "corner": 40,
+      "mottleScale": 3,
+      "pigments": [
+        { "color": "#e6d6ae", "strength": 0.17, "spread": 74, "soft": 200, "ragged": 16, "wick": 23, "tide": 0.17, "mottle": 0.26, "drift": 0 },
+        { "color": "#1fffe5", "strength": 0.31, "spread": -12, "soft": 63, "ragged": 16, "wick": 6, "tide": 0.18, "mottle": 0.35, "drift": 8 },
+        { "color": "#c23b3f", "strength": 0.56, "spread": -8, "soft": 30, "ragged": 10, "wick": 3, "tide": 0.12, "mottle": 0.43, "drift": 8 },
+        { "color": "#6e1830", "strength": 0.18, "spread": -166, "soft": 162, "ragged": 12, "wick": 0, "tide": 0.17, "mottle": 0.38, "drift": 15 }
+      ]
+    },
+    "indigo": {
+      "corner": 40,
+      "mottleScale": 3,
+      "pigments": [
+        { "color": "#e2dcc0", "strength": 0.17, "spread": 74, "soft": 200, "ragged": 16, "wick": 23, "tide": 0.17, "mottle": 0.26, "drift": 0 },
+        { "color": "#8fbcd0", "strength": 0.31, "spread": -100, "soft": 57, "ragged": 16, "wick": 6, "tide": 0.18, "mottle": 0.35, "drift": 8 },
+        { "color": "#3f4f9e", "strength": 0.65, "spread": -8, "soft": 66, "ragged": 10, "wick": 3, "tide": 0.12, "mottle": 0.43, "drift": 8 },
+        { "color": "#2c2f4a", "strength": 0.3, "spread": -203, "soft": 162, "ragged": 12, "wick": 0, "tide": 0.17, "mottle": 0.38, "drift": 15 }
+      ]
+    },
+    "oldyeller": {
+      "corner": 40,
+      "mottleScale": 3,
+      "pigments": [
+        { "color": "#eadbb0", "strength": 0.17, "spread": 74, "soft": 200, "ragged": 16, "wick": 23, "tide": 0.17, "mottle": 0.26, "drift": 0 },
+        { "color": "#fff8ad", "strength": 0.75, "spread": -184, "soft": 119, "ragged": 16, "wick": 6, "tide": 0.26, "mottle": 1, "drift": 83 },
+        { "color": "#ffee38", "strength": 0.2, "spread": -8, "soft": 30, "ragged": 10, "wick": 3, "tide": 0.12, "mottle": 0.43, "drift": 8 },
+        { "color": "#ff691f", "strength": 0.18, "spread": -8, "soft": 162, "ragged": 12, "wick": 0, "tide": 0.17, "mottle": 0.38, "drift": 15 }
+      ],
+      "ink": "#f5f5f5"
+    }
+  }
+}

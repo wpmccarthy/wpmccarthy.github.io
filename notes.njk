@@ -1,0 +1,42 @@
+---
+layout: base.njk
+title: All notes
+permalink: false # hidden for now; was /notes/
+---
+{% from "post-meta.njk" import postMeta %}
+<h1>All notes</h1>
+
+{% macro noteList(notes) %}
+<ul class="post-list with-paint">
+  {% for note in notes %}
+  {%- set paint = note.data.paintInfo %}
+  <li>
+    <a class="post-thumb" href="{{ note.url }}" tabindex="-1" aria-hidden="true">
+      {%- if paint.tile %}{% set size = paint.ratio | thumbSize %}
+      <img src="{{ paint.tile }}" alt="" width="{{ size.w }}" height="{{ size.h }}" loading="lazy" decoding="async">
+      {%- endif %}
+    </a>
+    <div>
+      <a href="{{ note.url }}">{{ note.data.title }}</a>
+      {{ postMeta(note.data.date, note.data.type, note.data.tags) }}
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% if collections.pinnedNotes.length %}
+<h2>Pinned</h2>
+{{ noteList(collections.pinnedNotes) }}
+{% endif %}
+
+{% if collections.otherNotes.length %}
+<h2>Notes</h2>
+{{ noteList(collections.otherNotes) }}
+{% endif %}
+
+{% if collections.ideatingNotes.length %}
+<h2>Ideating</h2>
+<p>Still being written.</p>
+{{ noteList(collections.ideatingNotes) }}
+{% endif %}

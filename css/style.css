@@ -1,0 +1,254 @@
+@import url("/css/canvas.css");
+
+:root {
+  --text: rgba(56, 62, 66, 0.9); /* graphite grey */
+  --muted: rgba(56, 62, 66, 0.7);
+  --rule: rgba(56, 62, 66, 0.2);
+  --link: var(--text);
+  --font: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Charter,
+    "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  /* The linen canvas: see canvas.css. */
+  background: var(--canvas);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Paint bleeds past the column; never let it cause sideways scrolling. */
+  overflow-x: clip;
+}
+
+/* The header and footer span the wide frame on every page (site name left, menu
+   right); reading content sits in a 46rem column inside it. */
+body {
+  margin: 0 auto;
+  max-width: calc(80rem + 2.5rem);
+  padding: 2rem 1.25rem 4rem;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 2px; }
+
+h1, h2, h3, h4 { line-height: 1.25; margin: 2.5rem 0 0.75rem; font-weight: 600; }
+h1 { font-size: 1.9rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.15rem; }
+p, ul, ol, blockquote, pre { margin: 0 0 1.25rem; }
+img, svg { max-width: 100%; height: auto; }
+blockquote { margin-left: 0; padding-left: 1.25rem; border-left: 2px solid var(--rule); color: var(--muted); }
+pre { overflow-x: auto; font-size: 0.9rem; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+/* Header / footer */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 3rem;
+}
+.site-logo { font-weight: 600; font-size: 1.25rem; text-decoration: none; }
+/* When the SVG mark goes in, size it here. */
+.site-logo svg { display: block; height: 2.5rem; width: auto; }
+.site-tagline { margin: 0.1rem 0 0; color: var(--muted); font-style: italic; font-size: 1rem; }
+.site-nav { padding-top: 0.2rem; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+.site-nav a { text-decoration: none; }
+.site-nav a[aria-current="page"], .site-nav a:hover { text-decoration: underline; }
+.site-footer { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.95rem; }
+
+/* Posts */
+.post-meta { color: var(--muted); font-size: 0.95rem; }
+.post { margin-bottom: 4rem; }
+.post > header h1, .post > header h2 { margin-bottom: 0.25rem; }
+.post > header h2 a { text-decoration: none; }
+.post > header { margin-bottom: 2rem; }
+
+.post-list { list-style: none; padding: 0; }
+.post-list > li { margin-bottom: 1.25rem; }
+.post-list .post-meta { margin: 0; }
+/* Notes list with a small rendering of each note's paint. Thumbnails share roughly
+   the same area whatever their shape (width/height set in notes.njk). */
+.post-list.with-paint > li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0 1rem; align-items: center; }
+.post-thumb { display: grid; place-items: center; height: 5.5rem; mix-blend-mode: multiply; }
+.post-thumb img { display: block; max-width: none; }
+.tag-definition { color: var(--muted); font-style: italic; margin-top: -0.25rem; }
+.archive h2 { font-size: 1.15rem; color: var(--muted); font-weight: normal; }
+
+/* Type filter on /posts (only shown where :has works) */
+.filter { display: none; border: 0; padding: 0; margin: 0 0 2rem; gap: 0.25rem 1.25rem; flex-wrap: wrap; align-items: baseline; }
+.filter legend { float: left; color: var(--muted); }
+/* Radios stay in the page for keyboard and screen-reader use; only the circle is hidden. */
+.filter input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.filter label { cursor: pointer; color: var(--muted); text-underline-offset: 0.2em; }
+.filter label:hover { color: var(--text); }
+.filter label:has(input:checked) { color: var(--text); text-decoration: underline; text-decoration-thickness: 2px; }
+.filter label:has(input:focus-visible) { outline: 2px solid var(--text); outline-offset: 3px; }
+@supports selector(:has(*)) {
+  .filter { display: flex; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---- Paint ------------------------------------------------------------------
+   Stain images (paint/render.js) are transparent where the canvas is bare and are
+   drawn with mix-blend-mode: multiply, so the linen shows through and overlapping
+   stains glaze over each other. Nothing between them and the page background may
+   create a stacking context (transform, filter, opacity < 1, z-index, contain…),
+   or they'd blend against transparency instead of the linen. */
+
+/* Home: the canvas. Positions are in board units (100 = board width). */
+main { max-width: 43.5rem; margin: 0 auto; }
+body.home main { max-width: none; }
+/* Opened notes are wider; keep in step with WIDE in paint/eleventy.js. */
+body.note main { max-width: 54rem; }
+.board {
+  --bw: min(100vw - 2.5rem, 80rem);
+  position: relative;
+  width: var(--bw);
+  height: calc(var(--bh) * var(--bw) / 100);
+  margin: 0 auto;
+}
+.tile {
+  --tw: calc(var(--w) * var(--bw) / 100);
+  position: absolute;
+  left: calc(var(--x) * var(--bw) / 100);
+  top: calc(var(--y) * var(--bw) / 100);
+  width: var(--tw);
+  aspect-ratio: 1 / var(--r);
+  /* The bleed is 250 / 1500 of the tile's width on every side; text sits on the core.
+     (Not a % padding: that would be a percentage of the board, not the tile.) */
+  padding: calc(var(--tw) / 6);
+  display: block;
+  mix-blend-mode: multiply;
+  color: var(--ink);
+  text-decoration: none;
+  /* Only the painted core is clickable, so a neighbour's bleed never steals a click. */
+  pointer-events: none;
+}
+.tile-paint {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+/* The tile's last pigment, drawn on its own over the others. Multiplying the two
+   layers gives exactly the full painting. On hover it slowly spreads (scale) and
+   softens (blur), then springs back. Amounts and speed: "hover" in paint/settings.json
+   (spread and soft in pigment units, seconds = time to fully spread). */
+.tile-top {
+  mix-blend-mode: multiply;
+  transition: transform 0.9s cubic-bezier(0.3, 1.5, 0.5, 1), filter 0.9s ease-out;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .tile:hover .tile-top {
+    transform: scale(var(--sx), var(--sy));
+    filter: blur(calc(var(--tw) * var(--hover-soft) / 1500 / 2));
+    transition: transform var(--hover-seconds, 6s) cubic-bezier(0.2, 0.6, 0.3, 1),
+      filter var(--hover-seconds, 6s) cubic-bezier(0.2, 0.6, 0.3, 1);
+  }
+}
+.tile-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: calc(var(--tw) * 0.05);
+  font-size: clamp(0.85rem, calc(var(--tw) * 0.052), 2.1rem);
+  line-height: 1.2;
+  pointer-events: auto;
+}
+.tile[data-text$="right"] .tile-text { align-items: flex-end; text-align: right; }
+.tile[data-text^="bottom"] .tile-text { justify-content: flex-end; }
+.tile-title { font-weight: 600; text-wrap: balance; }
+.tile-meta { margin-top: 0.6em; font-size: max(0.75rem, 0.55em); font-style: italic; opacity: 0.8; }
+.tile:hover .tile-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+.tile:focus-visible { outline: none; }
+.tile:focus-visible .tile-text { outline: 2px solid currentColor; outline-offset: -0.5rem; }
+
+/* Phones: one column, top to bottom, sizes relative to the widest tile, bleeds overlapping. */
+@media (max-width: 760px) {
+  .board {
+    --col: calc(100vw - 2.5rem);
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+  }
+  .tile {
+    --tw: calc(var(--w) / var(--wmax) * 1.3 * var(--col));
+    position: relative;
+    left: auto;
+    top: auto;
+    flex: none;
+    /* Keep each tile's horizontal position, relative to the room its painted core
+       (the middle 2/3 of the tile) has to move in; the bleed may run off-screen. */
+    margin-left: calc(var(--tw) / -6 + (var(--col) - var(--tw) * 2 / 3) * var(--mx));
+    margin-top: calc(var(--tw) * -0.27);
+  }
+  .tile:first-child { margin-top: calc(var(--tw) * -0.1); }
+  .tile-text { font-size: clamp(1rem, calc(var(--tw) * 0.058), 1.6rem); }
+}
+
+/* Opened note: its stain is the ground the text is written on. The ground image has
+   the same 25% bleed on each side, and its shape is estimated from the note's length
+   (paint/eleventy.js) so it rarely needs stretching. */
+.post.painted {
+  --text: var(--ink);
+  --link: var(--ink);
+  --muted: color-mix(in srgb, var(--ink) 72%, transparent);
+  --rule: color-mix(in srgb, var(--ink) 30%, transparent);
+  position: relative;
+  color: var(--text);
+  margin: 5rem 0 9rem; /* room for the bleed above the header rule and footer */
+  padding: 3rem 5rem 3.5rem;
+  aspect-ratio: 1 / var(--tall);
+}
+.post.painted::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: -25%; /* percentages of width on every side */
+  background: var(--ground) center / 100% 100% no-repeat;
+  mix-blend-mode: multiply;
+  z-index: -1;
+  pointer-events: none;
+}
+.post.painted > header h1 { margin-top: 0; }
+.post.painted > :last-child { margin-bottom: 0; }
+@media (max-width: 760px) {
+  .post.painted { padding: 2rem 1.25rem 2.5rem; margin: 3.5rem 0 6rem; aspect-ratio: 1 / var(--tall-narrow); }
+  .post.painted::before { background-image: var(--ground-narrow); }
+}
+
+/* A picture in a note's Markdown: <img class="float-right" src="…" alt="…">
+   sits in a column on the right with the text beside it; on phones it goes full width. */
+.post img.float-right { float: right; width: 15rem; margin: 0.35rem 0 1.25rem 2.5rem; border-radius: 2px; }
+@media (max-width: 760px) {
+  .post img.float-right { float: none; display: block; width: 100%; margin: 0 0 1.5rem; }
+}

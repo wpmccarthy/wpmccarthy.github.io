@@ -1,0 +1,14 @@
+---
+layout: base.njk
+bodyClass: note
+---
+{% from "post-meta.njk" import postMeta %}
+{#- The note's paint stain is the ground the text sits on (see paint/ and css/style.css). #}
+<article class="post{% if paintInfo.ground %} painted{% endif %}"
+  {%- if paintInfo.ground %} style="--ground: url('{{ paintInfo.ground }}'); --ground-narrow: url('{{ paintInfo.groundNarrow }}'); --tall: {{ paintInfo.groundTall }}; --tall-narrow: {{ paintInfo.groundTallNarrow }}; --ink: {{ paintInfo.ink }}"{% endif %}>
+  <header>
+    <h1>{{ title }}</h1>
+    {{ postMeta(date, type, tags) }}
+  </header>
+  {{ content | safe }}
+</article>

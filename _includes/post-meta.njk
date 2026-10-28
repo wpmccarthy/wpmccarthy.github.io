@@ -1,0 +1,11 @@
+{#- Date, type and tag links for a note. Usage:
+    {% from "post-meta.njk" import postMeta %}{{ postMeta(date, type, tags) }} #}
+{% macro postMeta(date, type, tags) %}
+<p class="post-meta">
+  {%- if date %}<time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>{% endif %}
+  {%- if type %}{% if date %} · {% endif %}<span class="post-type">{{ type }}</span>{% endif %}
+  {%- if tags and tags.length %}
+  {% if date or type %}· {% endif %}{% for tag in tags %}{% set definition = tag | tagDefinition %}<a class="tag" href="{{ tag | tagUrl }}"{% if definition %} title="{{ definition }}"{% endif %}>{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+  {%- endif %}
+</p>
+{% endmacro %}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ site.language }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.tagline }}">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="/css/style.css">
+  {%- if site.feed %}
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
+  {%- endif %}
+</head>
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
+  <header class="site-header">
+    <div class="site-brand">
+      <a class="site-logo" href="/">
+        {#- Logo slot: swap this text for an inline SVG mark
+            (keep an aria-label or <title> on the SVG so the link has a name). #}
+        {{ site.title }}
+      </a>
+      <p class="site-tagline">{{ site.tagline }}</p>
+    </div>
+    <nav class="site-nav">
+      {#- Notes (/notes/) and AI (/ai/) are hidden for now; see notes.njk and ai.md.
+          About (/notes/who-am-i/) is hidden from the menu but still in the footer. #}
+      {%- for item in [
+        { url: "/notes/research/", label: "Research" }
+      ] %}
+      <a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {%- endfor %}
+    </nav>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="/notes/who-am-i/">About</a>{% if site.feed %} · <a href="/feed.xml">RSS</a>{% endif %}</p>
+  </footer>
+  {%- if dev and bodyClass == "home" %}
+  <script type="module" src="/studio/assets/arrange.js"></script>
+  {%- endif %}
+</body>
+</html>

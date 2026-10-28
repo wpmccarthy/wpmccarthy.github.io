@@ -1,0 +1,14 @@
+/* The raw linen canvas. Shared by the site (style.css) and the paint studio, so the
+   studio previews stains on exactly the background visitors see. Change it here.
+
+   It scrolls with the page at a fixed scale (rather than `fixed` / `cover`), so the
+   paint, which multiplies onto it, stays stuck to the weave as you scroll. */
+:root {
+  --canvas-wash: rgba(255, 255, 255, 0.15); /* white over the linen: higher = paler */
+  --canvas-scale: 1440px;                   /* width of one repeat of the linen photo */
+  --canvas-base: #fff;
+  --canvas:
+    linear-gradient(var(--canvas-wash), var(--canvas-wash)),
+    url("/images/simple-smooth-fabric-textured-background.jpg") center top / var(--canvas-scale) auto repeat,
+    var(--canvas-base);
+}

@@ -1,0 +1,23 @@
+# Caddy obtains and renews HTTPS certificates for these names automatically.
+# DNS A (and AAAA) records for both must point at the droplet first.
+
+keepsharpening.com {
+	root * /var/www/keepsharpening
+	encode zstd gzip
+	file_server
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+	}
+
+	handle_errors 404 {
+		rewrite * /404.html
+		file_server
+	}
+}
+
+www.keepsharpening.com {
+	redir https://keepsharpening.com{uri} permanent
+}

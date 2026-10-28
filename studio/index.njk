@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paint studio · {{ site.title }}</title>
+  <link rel="stylesheet" href="/studio/assets/studio.css">
+</head>
+<body>
+  <header class="bar">
+    <a href="/" class="home-link">← Canvas</a>
+    <label class="note-pick">Note
+      <select id="note"></select>
+    </label>
+    <span id="status" class="status" role="status"></span>
+    <span class="spacer"></span>
+    <button id="revert" type="button" title="Discard unsaved changes">Revert</button>
+    <button id="clear" type="button" title="Remove this note's paint: block so it follows the default presets">Use defaults</button>
+    <button id="save" type="button" class="primary">Save to note</button>
+  </header>
+
+  <main class="studio">
+    <section class="panel globals" aria-label="Shape">
+      <h2>Presets</h2>
+      <p class="help">Click to apply. Notes without their own paint pick from the <b>default</b> ones.</p>
+      <div id="presets" class="presets"></div>
+      <div class="preset-actions">
+        <button id="save-preset" type="button" title="Save the current look (pigments, corner, mottle scale, ink) as a preset">Save as preset…</button>
+        <button id="make-default" type="button" title="Save the current look as a preset and make it the only default">Make default for all…</button>
+      </div>
+      <h2>Shape</h2>
+      <div id="global-controls"></div>
+      <h2>Text</h2>
+      <label class="row">Ink
+        <select id="ink-mode">
+          <option value="auto">Auto</option>
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="custom">Custom</option>
+        </select>
+        <input id="ink-color" type="color" value="#2a2624" hidden>
+      </label>
+    </section>
+
+    <section class="stage-wrap" aria-label="Preview">
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" data-view="tile" aria-selected="true">Tile</button>
+        <button type="button" role="tab" data-view="ground" aria-selected="false">Opened note</button>
+      </div>
+      <div id="stage" class="stage linen">
+        <div id="tile-view" class="tile-view">
+          <canvas id="main"></canvas>
+          <div class="tile-label"><span id="label-title"></span><span id="label-meta"></span></div>
+        </div>
+        <div id="ground-view" class="ground-view" hidden>
+          <canvas id="ground"></canvas>
+          <div class="ground-text"><strong id="ground-title"></strong><span class="lines"></span></div>
+        </div>
+      </div>
+      <div class="variants-head">
+        <h2>Variations <small>same colours, different seed — click one to use it</small></h2>
+        <button id="shuffle" type="button">Shuffle</button>
+      </div>
+      <div id="variants" class="variants"></div>
+    </section>
+
+    <section class="panel pigments" aria-label="Pigments">
+      <h2>Pigments <small>bottom → top</small></h2>
+      <div id="pigment-list"></div>
+      <div class="preset-actions">
+        <button id="add-pigment" type="button">+ Add pigment</button>
+        <button id="apply-all" type="button" title="Copy each layer's settings (not its colour) onto the same layer of every preset">Apply settings to all presets…</button>
+      </div>
+    </section>
+  </main>
+
+  <script id="settings-data" type="application/json">{{ null | paintSettings | scriptJson | safe }}</script>
+  <script id="notes-data" type="application/json">{{ collections.studioNotes | studioData | scriptJson | safe }}</script>
+  <script type="module" src="/studio/assets/studio.js"></script>
+</body>
+</html>

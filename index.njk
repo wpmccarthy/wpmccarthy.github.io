@@ -1,0 +1,29 @@
+---
+layout: base.njk
+bodyClass: home
+---
+{#- The homepage is a raw linen canvas; each note is a stain of paint on it.
+    Tile positions come from each note's `place:` front matter (see README). #}
+{% set tiles = collections.board %}
+<h2 class="visually-hidden">Notes</h2>
+<div class="board" style="--bh: {{ tiles | boardHeight }}; --wmax: {{ tiles | maxTileWidth }}">
+  {%- for tile in tiles %}
+  {%- set note = tile.note %}
+  {%- set paint = note.data.paintInfo %}
+  <a class="tile" href="{{ note.url }}" data-input="{{ paint.inputPath }}" data-slug="{{ paint.slug }}" data-text="{{ tile.text }}"
+     {%- if dev %} data-tall="{{ paint.params.tall }}" data-tall-auto="{{ paint.params.tallAuto }}" data-tall-words="{{ paint.tallWords }}"{% endif %}
+     style="--x: {{ tile.x }}; --y: {{ tile.y }}; --w: {{ tile.w }}; --mx: {{ tile.mx }}; --r: {{ paint.ratio | round(4) }}; --ink: {{ paint.ink }}">
+    {%- if paint.tileBase %}
+    <img class="tile-paint" src="{{ paint.tileBase }}" alt="" decoding="async">
+    {%- endif %}
+    <img class="tile-paint tile-top" src="{{ paint.tileTop }}" alt="" decoding="async"
+         style="--sx: {{ paint.hover.sx }}; --sy: {{ paint.hover.sy }}; --hover-soft: {{ paint.hover.soft }}; --hover-seconds: {{ paint.hover.seconds }}s">
+    <span class="tile-text">
+      <span class="tile-title">{{ note.data.title }}</span>
+      {%- if note.data.type or note.data.tags %}
+      <span class="tile-meta">{{ note.data.type }}{% if note.data.type and note.data.tags and note.data.tags.length %} · {% endif %}{{ (note.data.tags or []) | join(", ") }}</span>
+      {%- endif %}
+    </span>
+  </a>
+  {%- endfor %}
+</div>

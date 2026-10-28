@@ -1,0 +1,16 @@
+{
+  "name": "keepsharpening",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-plugin-rss": "^3.0.0"
+  }
+}
