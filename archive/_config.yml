@@ -60,4 +60,4 @@ sass:
 header_pages:
   # - index.markdown
   - research.markdown
-  - contact.markdown
+  # - contact.markdown
