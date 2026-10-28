@@ -15,7 +15,7 @@ paint:
     - { color: "#3b8774", strength: 0.56, spread: 2, soft: 69, ragged: 6, wick: 3, tide: 0.12, mottle: 0.43, drift: 8 }
     - { color: "#1f4a4a", strength: 0.18, spread: -218, soft: 162, ragged: 12, wick: 0, tide: 0.17, mottle: 0.38, drift: 15 }
   ink: "rgba(252, 247, 238, 0.95)"
-place: { x: -5.6, y: -5, w: 43.4, text: "bottom-left" }
+place: { x: -3.9, y: -3, w: 43.4, text: "bottom-left" }
 ---
 <img class="float-right" src="/images/headshot_2026_cropped-web.jpeg" alt="Will McCarthy">
 

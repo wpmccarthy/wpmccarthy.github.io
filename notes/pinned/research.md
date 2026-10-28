@@ -1,11 +1,11 @@
 ---
 title: "Research"
 type: note
-place: { x: 41.6, y: 4.2, w: 64.8, text: "top-right" }
 paint:
+  tall: 0.71
   seed: 20006
-  tall: 0.52
-  preset: "oldyeller"
+  preset: "indigo"
+place: { x: 40.7, y: 3.2, w: 63.4, text: "top-right" }
 ---
 How can we build AI systems that complement and extend our ability to make things? I tackle this question using tools from computational cognitive science. I develop online experiments where people build, draw, and create graphics, either alone or in collaboration with others. I then deconstruct these behaviors with statistical analysis and machine learning models.
 

@@ -23,7 +23,7 @@
     </div>
     <nav class="site-nav">
       {#- Notes (/notes/) and AI (/ai/) are hidden for now; see notes.njk and ai.md.
-          About (/notes/who-am-i/) is hidden from the menu but still in the footer. #}
+          About (/notes/who-am-i/) is hidden from the menu and footer. #}
       {%- for item in [
         { url: "/notes/research/", label: "Research" }
       ] %}
@@ -37,7 +37,14 @@
   </main>
 
   <footer class="site-footer">
-    <p><a href="/notes/who-am-i/">About</a>{% if site.feed %} · <a href="/feed.xml">RSS</a>{% endif %}</p>
+    {%- if site.feed %}
+    <p><a href="/feed.xml">RSS</a></p>
+    {%- endif %}
+    <ul class="social">
+      {%- for link in site.social %}
+      <li><a href="{{ link.url }}"><img src="/images/social/{{ link.icon }}.svg" alt="{{ link.label }}" width="32" height="32"></a></li>
+      {%- endfor %}
+    </ul>
   </footer>
   {%- if dev and bodyClass == "home" %}
   <script type="module" src="/studio/assets/arrange.js"></script>

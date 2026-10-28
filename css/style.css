@@ -63,6 +63,9 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0; }
 .site-nav a { text-decoration: none; }
 .site-nav a[aria-current="page"], .site-nav a:hover { text-decoration: underline; }
 .site-footer { margin-top: 5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.95rem; }
+.social { list-style: none; display: flex; gap: 0.75rem; margin: 0; padding: 0; }
+.social img { display: block; width: 2rem; height: 2rem; filter: grayscale(1); opacity: 0.75; transition: opacity 0.2s; }
+.social a:hover img, .social a:focus-visible img { opacity: 1; }
 
 /* Posts */
 .post-meta { color: var(--muted); font-size: 0.95rem; }
